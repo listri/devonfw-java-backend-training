@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<access-control-schema>
+	<group id="ReadMasterData" type="group">
+		<permissions>
+			<permission id="FindItem" />
+			<permission id="FindItems" />
+		</permissions>
+	</group>
+	<group id="Chief" type="role">
+		<permissions>
+			<permission id="SaveItem" />
+			<permission id="DeleteItem" />
+		</permissions>
+	</group>
+
+
+</access-control-schema>
