@@ -11,9 +11,9 @@ import com.devonfw.module.security.common.base.accesscontrol.AccessControlConfig
 @Named
 public class ApplicationAccessControlConfig extends AccessControlConfig {
 
-  public static final String APP_ID = "order-service";
+  public static final String APP_ID = "";
 
-  private static final String PREFIX = APP_ID + ".";
+  private static final String PREFIX = APP_ID + "";
 
   public static final String PERMISSION_FIND_BINARY_OBJECT = PREFIX + "FindBinaryObject";
 
@@ -33,6 +33,7 @@ public class ApplicationAccessControlConfig extends AccessControlConfig {
     super();
     AccessControlGroup readMasterData = group(GROUP_READ_MASTER_DATA, PERMISSION_FIND_BINARY_OBJECT);
     group(GROUP_ADMIN, readMasterData, PERMISSION_SAVE_BINARY_OBJECT, PERMISSION_DELETE_BINARY_OBJECT);
+    group("Chief", readMasterData, "FindItem");
   }
 
 }

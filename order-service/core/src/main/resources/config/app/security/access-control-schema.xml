@@ -10,6 +10,7 @@
 		<permissions>
 			<permission id="SaveItem" />
 			<permission id="DeleteItem" />
+			<permission id="FindItem" />
 		</permissions>
 	</group>
 

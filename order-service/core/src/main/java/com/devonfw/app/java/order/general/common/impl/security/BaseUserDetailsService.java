@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -81,10 +82,12 @@ public class BaseUserDetailsService implements UserDetailsService {
 
   private Collection<String> getRoles(String username) {
 
-    Collection<String> roles = new ArrayList<>();
-    // TODO for a reasonable application you need to retrieve the roles of the user from a central IAM system
-    roles.add(username);
-    return roles;
+	  UserDetails user = getAmBuilder().getDefaultUserDetailsService().loadUserByUsername(username);
+	  return user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
+//    Collection<String> roles = new ArrayList<>();
+//    // TODO for a reasonable application you need to retrieve the roles of the user from a central IAM system
+//    roles.add(username);
+//    return roles;
   }
 
   /**

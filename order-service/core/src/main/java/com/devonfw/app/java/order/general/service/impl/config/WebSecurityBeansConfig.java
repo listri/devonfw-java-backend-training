@@ -19,7 +19,7 @@ import com.devonfw.module.security.common.impl.accesscontrol.AccessControlSchema
  */
 @Configuration
 public class WebSecurityBeansConfig {
-
+/*
   /**
    * This method provides a new instance of {@code AccessControlProvider}
    *
